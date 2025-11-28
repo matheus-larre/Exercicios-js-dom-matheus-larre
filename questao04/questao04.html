@@ -7,7 +7,20 @@
 </head>
 <body>
   <h1>Questão 04</h1>
-  <div id="app"></div>
+  <form id="form-04" onsubmit="event.preventDefault(); validarFormulario();">
+    <label>Nome completo: <input type="text" id="nome" /></label>
+    <br />
+    <label>Data de nascimento: <input type="date" id="dataNasc" /></label>
+    <br />
+    <label>CPF: <input type="text" id="cpf" placeholder="000.000.000-00" /></label>
+    <br />
+    <label>E-mail: <input type="email" id="email" /></label>
+    <br />
+    <label>Telefone: <input type="text" id="telefone" placeholder="(xx) xxxxx-xxxx" /></label>
+    <br />
+    <button id="btn-validar" type="submit">Validar Cadastro</button>
+  </form>
+  <p id="mensagem"></p>
   <script src="questao04.js"></script>
 </body>
 </html>
