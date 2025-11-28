@@ -53,6 +53,19 @@ O repositório está organizado em quatro exercícios principais:
 
 ---
 
+## ▶️ Rodar servidor local (rápido)
+
+1. Abra um terminal na pasta do projeto.
+2. Execute (Python 3):
+```powershell
+python -m http.server 8000
+```
+3. Acesse no navegador: `http://localhost:8000/` e clique na questão desejada.
+
+Obs: Para parar o servidor, pressione `Ctrl+C` no terminal.
+
+---
+
 ## ✒️ Autor
 
 **Matheus Larré** - Análise e desenvolvimento de sistemas - CESAR School
