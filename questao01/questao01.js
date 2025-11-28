@@ -1,5 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const app = document.getElementById('app');
-  app.textContent = 'Esboço da Questão 01';
-  console.log('Questão 01 carregada');
-});
+function inserirTitulo() {
+  const input = document.getElementById('txt-titulo');
+  const titulo = document.getElementById('titulo');
+  if (!input || !titulo) return;
+  const valor = input.value;
+  titulo.innerText = valor;
+  titulo.style.color = 'blue';
+}
+
+console.log('Questão 01: script carregado');
