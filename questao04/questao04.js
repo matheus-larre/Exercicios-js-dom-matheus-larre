@@ -25,3 +25,42 @@ function validarFormulario() {
 }
 
 console.log('Questão 04: script carregado');
+
+// Máscaras simples para CPF e Telefone
+function maskCPF(e) {
+  const el = e.target;
+  let v = el.value.replace(/\D/g, '');
+  if (v.length > 11) v = v.slice(0, 11);
+  v = v.replace(/(\d{3})(\d)/, '$1.$2');
+  v = v.replace(/(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+  v = v.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+  el.value = v;
+}
+
+function maskTelefone(e) {
+  const el = e.target;
+  let v = el.value.replace(/\D/g, '');
+  if (v.length > 11) v = v.slice(0, 11);
+  if (v.length <= 2) {
+    el.value = v;
+    return;
+  }
+  if (v.length <= 6) {
+    el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2);
+    return;
+  }
+  // padrão (xx) xxxxx-xxxx ou (xx) xxxx-xxxx
+  if (v.length <= 10) {
+    el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 6) + '-' + v.slice(6);
+  } else {
+    el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7);
+  }
+}
+
+// Registra listeners se os elementos existirem
+document.addEventListener('DOMContentLoaded', () => {
+  const cpfEl = document.getElementById('cpf');
+  const telEl = document.getElementById('telefone');
+  if (cpfEl) cpfEl.addEventListener('input', maskCPF);
+  if (telEl) telEl.addEventListener('input', maskTelefone);
+});
