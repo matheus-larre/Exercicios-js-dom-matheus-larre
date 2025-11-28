@@ -7,7 +7,22 @@
 </head>
 <body>
   <h1>Questão 03</h1>
-  <div id="app"></div>
+  <form id="form-cadastro" onsubmit="event.preventDefault(); cadastrarUsuario();">
+    <label>Nome completo: <input type="text" id="nome" /></label>
+    <br />
+    <label>Data de nascimento: <input type="date" id="dataNasc" /></label>
+    <br />
+    <label>Rua: <input type="text" id="rua" /></label>
+    <br />
+    <label>Número: <input type="number" id="numero" /></label>
+    <br />
+    <label>Cidade: <input type="text" id="cidade" /></label>
+    <br />
+    <label>Estado: <input type="text" id="uf" /></label>
+    <br />
+    <button id="cadastrar" type="submit">Cadastrar</button>
+  </form>
+  <p id="resultado"></p>
   <script src="questao03.js"></script>
 </body>
 </html>
